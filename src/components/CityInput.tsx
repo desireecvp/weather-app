@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { Input } from "./ui/input"
 import { searchCities } from "@/api/geo-api"
+import { CityData } from "@/types"
 
-export function CityInput({setSavedCity}: {setSavedCity: React.Dispatch<React.SetStateAction<undefined>>}) {
+export function CityInput({setSavedCity}: {setSavedCity: React.Dispatch<React.SetStateAction<CityData | undefined>>}) {
     const [cityValue, setCityValue] = useState("")
-    const [results, setResults] = useState([])
+    const [results, setResults] = useState<CityData[]>([])
 
 
    async function handleChange(cityName: string) {
@@ -18,7 +19,7 @@ export function CityInput({setSavedCity}: {setSavedCity: React.Dispatch<React.Se
 
     }
 
-        function handleClick(city) {
+        function handleClick(city: CityData) {
             setSavedCity(city)
             setResults([])
         }
