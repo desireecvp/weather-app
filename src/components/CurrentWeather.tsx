@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { CardHeader, CardTitle, CardDescription } from "./ui/card";
 import { CityData, CurrentWeatherData } from "@/types";
 import { format } from "date-fns";
-import { Cloud, CloudRain, LucideCloudSnow, Moon, Sun } from "lucide-react";
+import { WeatherIcon } from "./WeatherIcon";
 
 export function CurrentWeather({ savedCity }: { savedCity?: CityData }) {
   const [currentWeather, setCurrentWeather] = useState<CurrentWeatherData>();
@@ -16,25 +16,6 @@ export function CurrentWeather({ savedCity }: { savedCity?: CityData }) {
     getResponse();
   }, [savedCity]);
 
-  function currentIcon() {
-    if (currentWeather?.current.rain) {
-      return <CloudRain />;
-    }
-
-    if ((currentWeather?.current.cloud_cover || 0) > 50) {
-      return <Cloud />;
-    }
-
-    if (currentWeather?.current.snowfall) {
-      return <LucideCloudSnow />;
-    }
-
-    if (currentWeather?.current.is_day) {
-      return <Sun />;
-    }
-    return <Moon />;
-  }
-
   console.log(currentWeather);
 
   if (currentWeather === undefined) {
@@ -46,7 +27,10 @@ export function CurrentWeather({ savedCity }: { savedCity?: CityData }) {
         <div className="flex justify-between">
           <h1>{savedCity?.name}</h1>
           <div className="flex flex-col gap-2 items-center">
-            {currentIcon()}
+            <WeatherIcon
+              isDay={!!currentWeather.current.is_day}
+              weatherCode={currentWeather.current.weather_code}
+            />
           </div>
         </div>
       </CardTitle>

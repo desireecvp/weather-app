@@ -1,3 +1,4 @@
+import { CityData } from "@/types";
 import axios from "axios";
 
 const weatherApi = axios.create({
@@ -5,16 +6,16 @@ const weatherApi = axios.create({
   method: "GET",
 });
 
-export async function getCurrentWeather(city) {
+export async function getCurrentWeather(city: CityData) {
   const response = await weatherApi.get(
-    `forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,is_day,rain,showers,snowfall,cloud_cover`
+    `forecast?latitude=${city.latitude}&longitude=${city.longitude}&current=temperature_2m,is_day,rain,showers,snowfall,cloud_cover,weather_code`
   );
   return response;
 }
 
-export async function getWeeklyWeather(city) {
+export async function getWeeklyWeather(city: CityData) {
   const response = await weatherApi.get(
-    `forecast?latitude=${city.latitude}&longitude=${city.longitude}&daily=temperature_2m_max,temperature_2m_min`
+    `forecast?latitude=${city.latitude}&longitude=${city.longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code`
   );
   return response;
 }

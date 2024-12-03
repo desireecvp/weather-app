@@ -24,6 +24,7 @@ export interface CurrentWeatherData extends BaseWeatherData {
     showers: number;
     snowfall: number;
     cloud_cover: number;
+    weather_code: number;
   };
 }
 
@@ -37,6 +38,7 @@ export interface WeeklyWeatherData extends BaseWeatherData {
     time: string[];
     temperature_2m_max: number[];
     temperature_2m_min: number[];
+    weather_code: number[];
   };
 }
 

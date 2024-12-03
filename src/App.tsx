@@ -17,9 +17,9 @@ export function App() {
           <Card>
             <CurrentWeather savedCity={savedCity} />
 
-            <CardContent>
-              <p>Card Content</p>
-            </CardContent>
+            {/* <CardContent>
+             <p>Card Content</p>
+            </CardContent> */}
             <WeeklyWeather savedCity={savedCity} />
           </Card>
         </div>
