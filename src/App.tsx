@@ -1,13 +1,15 @@
 import { Header } from "./components/Header";
 import { CurrentWeather } from "./components/CurrentWeather";
-import { Card, CardContent } from "./components/ui/card";
+import { Card } from "./components/ui/card";
 import { WeeklyWeather } from "./components/WeeklyWeather";
 import { CityInput } from "./components/CityInput";
 import { useState } from "react";
 import { CityData } from "./types";
+import { defaultCity } from "./constants";
 
 export function App() {
-  const [savedCity, setSavedCity] = useState<CityData>();
+  const [savedCity, setSavedCity] = useState<CityData>(defaultCity);
+
   return (
     <div className="p-5 bg-background dark min-h-screen">
       <Header />
@@ -16,10 +18,6 @@ export function App() {
           <CityInput setSavedCity={setSavedCity} />
           <Card>
             <CurrentWeather savedCity={savedCity} />
-
-            {/* <CardContent>
-             <p>Card Content</p>
-            </CardContent> */}
             <WeeklyWeather savedCity={savedCity} />
           </Card>
         </div>

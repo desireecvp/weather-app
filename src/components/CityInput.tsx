@@ -6,7 +6,7 @@ import { CityData } from "@/types";
 export function CityInput({
   setSavedCity,
 }: {
-  setSavedCity: React.Dispatch<React.SetStateAction<CityData | undefined>>;
+  setSavedCity: React.Dispatch<React.SetStateAction<CityData>>;
 }) {
   const [cityValue, setCityValue] = useState("");
   const [results, setResults] = useState<CityData[]>([]);

@@ -3,9 +3,9 @@ type BaseWeatherData = {
   longitude: number;
   generationtime_ms?: number;
   utc_offset_seconds?: number;
-  timezone: string;
+  timezone?: string;
   timezone_abbreviation?: string;
-  elevation: number;
+  elevation?: number;
 };
 
 export interface CurrentWeatherData extends BaseWeatherData {
@@ -43,18 +43,18 @@ export interface WeeklyWeatherData extends BaseWeatherData {
 }
 
 export interface CityData extends BaseWeatherData {
-  id: number;
+  id?: number;
   name: string;
-  feature_code: string;
-  country_code: string;
-  admin1_id: number;
-  admin3_id: number;
-  admin4_id: number;
-  population: number;
-  postcodes: string[];
-  country_id: number;
-  country: string;
-  admin1: string;
-  admin3: string;
-  admin4: string;
+  feature_code?: string;
+  country_code?: string;
+  admin1_id?: number;
+  admin3_id?: number;
+  admin4_id?: number;
+  population?: number;
+  postcodes?: string[];
+  country_id?: number;
+  country?: string;
+  admin1?: string;
+  admin3?: string;
+  admin4?: string;
 }
