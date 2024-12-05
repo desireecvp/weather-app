@@ -5,41 +5,41 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function mapWeatherDetails(weatherCode: number, isDay?: boolean) {
+export function mapWeatherDetails(weatherCode: number, isDay: boolean) {
   switch (weatherCode) {
     case 0:
     case 1:
       if (isDay) {
         return {
           icon: icons.Sun,
-          phrase: "today is sunny",
+          phrase: "The weather today is Sunny!",
         };
       }
       return {
         icon: icons.Moon,
-        phrase: "nightime",
+        phrase: "Nightime",
       };
     case 2:
       if (isDay) {
         return {
           icon: icons.CloudSun,
-          phrase: "sun and clouds",
+          phrase: "Sun with clouds in the sky",
         };
       }
       return {
         icon: icons.CloudMoon,
-        phrase: "sun and clouds",
+        phrase: "Nightime",
       };
     case 3:
       return {
         icon: icons.Cloud,
-        phrase: "sun and clouds",
+        phrase: "Cloudy day",
       };
     case 45:
     case 48:
       return {
         icon: icons.CloudFog,
-        phrase: "sun and clouds",
+        phrase: "Fog with clouds",
       };
     case 51:
     case 53:
@@ -48,7 +48,7 @@ export function mapWeatherDetails(weatherCode: number, isDay?: boolean) {
     case 57:
       return {
         icon: icons.CloudDrizzle,
-        phrase: "sun and clouds",
+        phrase: "Light Drizzle",
       };
     case 61:
     case 63:
@@ -57,7 +57,7 @@ export function mapWeatherDetails(weatherCode: number, isDay?: boolean) {
     case 67:
       return {
         icon: icons.CloudRain,
-        phrase: "sun and clouds",
+        phrase: "Rainy Day",
       };
     case 71:
     case 73:
@@ -67,26 +67,26 @@ export function mapWeatherDetails(weatherCode: number, isDay?: boolean) {
     case 86:
       return {
         icon: icons.CloudSnow,
-        phrase: "sun and clouds",
+        phrase: "Snowy Day",
       };
     case 80:
     case 81:
     case 82:
       return {
         icon: icons.CloudRainWind,
-        phrase: "sun and clouds",
+        phrase: "Rain with wind",
       };
     case 95:
     case 96:
     case 99:
       return {
         icon: icons.CloudLightning,
-        phrase: "sun and clouds",
+        phrase: "Rain and lighting",
       };
     default:
       return {
         icon: icons.Sun,
-        phrase: "sun and clouds",
+        phrase: "Sunny day",
       };
   }
 }

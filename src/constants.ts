@@ -1,5 +1,5 @@
 export const defaultCity = {
-  name: "New York",
-  latitude: 40.71427,
-  longitude: -74.00597,
+  name: "Berlin",
+  latitude: 52.52,
+  longitude: 13.419998,
 };

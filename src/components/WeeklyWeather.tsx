@@ -20,7 +20,8 @@ export function WeeklyWeather({ savedCity }: { savedCity: CityData }) {
       <div className="flex justify-evenly w-full">
         {weeklyWeather?.daily.time.map((day, index) => {
           const Icon = mapWeatherDetails(
-            weeklyWeather.daily.weather_code[index]
+            weeklyWeather.daily.weather_code[index],
+            true
           ).icon;
           return (
             <div className="flex flex-col items-center gap-2 hover:text-primary">
