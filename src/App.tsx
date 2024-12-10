@@ -11,10 +11,10 @@ export function App() {
   const [savedCity, setSavedCity] = useState<CityData>(defaultCity);
 
   return (
-    <div className="p-5 bg-background dark min-h-screen">
+    <div className="p-7 bg-background dark min-h-screen font-poppins">
       <Header />
       <div className="flex justify-center w-full">
-        <div className="w-[460px] flex flex-col gap-8">
+        <div className="w-[660px] flex flex-col gap-8">
           <CityInput setSavedCity={setSavedCity} />
           <Card>
             <CurrentWeather savedCity={savedCity} />

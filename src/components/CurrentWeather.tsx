@@ -50,7 +50,7 @@ export function CurrentWeather({ savedCity }: { savedCity: CityData }) {
         </CardDescription>
       </CardHeader>
 
-      <CardContent>{phrase}</CardContent>
+      <CardContent className="flex justify-center">{phrase}</CardContent>
     </>
   );
 }

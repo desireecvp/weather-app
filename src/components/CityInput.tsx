@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "./ui/input";
 import { searchCities } from "@/api/geo-api";
 import { CityData } from "@/types";
+import ReactCountryFlag from "react-country-flag";
 
 export function CityInput({
   setSavedCity,
@@ -11,6 +12,7 @@ export function CityInput({
   const [cityValue, setCityValue] = useState("");
   const [results, setResults] = useState<CityData[]>([]);
 
+  console.log(results);
   async function handleChange(cityName: string) {
     setCityValue(cityName);
 
@@ -29,12 +31,16 @@ export function CityInput({
 
   return (
     <div className="flex flex-col gap-0 ">
-      <Input
-        onChange={(e) => handleChange(e.target.value)}
-        placeholder="Search city..."
-        className="text-white"
-        value={cityValue}
-      />
+      <div>
+        <Input
+          onChange={(e) => handleChange(e.target.value)}
+          placeholder="Search city..."
+          className="text-white"
+          value={cityValue}
+        />
+        <ReactCountryFlag countryCode="GB" />
+      </div>
+
       <div className="relative">
         <div className="border w-full border-muted border-y-0 rounded-sm absolute z-50 bg-background">
           {results?.map((result) => {
