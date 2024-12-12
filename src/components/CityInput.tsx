@@ -38,7 +38,6 @@ export function CityInput({
           className="text-white"
           value={cityValue}
         />
-        <ReactCountryFlag countryCode="GB" />
       </div>
 
       <div className="relative">
@@ -50,8 +49,9 @@ export function CityInput({
                 className="flex w-full border-b border-muted text-white shadow-md h-10 items-center p-4 gap-1 cursor-pointer"
               >
                 <span>{result.name},</span>
-                <span className="text-muted-foreground font-extralight">
+                <span className="flex items-center text-muted-foreground font-extralight gap-2">
                   {result.country}
+                  <ReactCountryFlag countryCode={result.country_code} />
                 </span>
               </div>
             );
