@@ -31,14 +31,12 @@ export function CityInput({
 
   return (
     <div className="flex flex-col gap-0 ">
-      <div>
-        <Input
-          onChange={(e) => handleChange(e.target.value)}
-          placeholder="Search city..."
-          className="text-white"
-          value={cityValue}
-        />
-      </div>
+      <Input
+        onChange={(e) => handleChange(e.target.value)}
+        placeholder="Search city..."
+        className="text-white"
+        value={cityValue}
+      />
 
       <div className="relative">
         <div className="border w-full border-muted border-y-0 rounded-sm absolute z-50 bg-background">
