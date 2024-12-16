@@ -49,7 +49,7 @@ export function CityInput({
                 <span>{result.name},</span>
                 <span className="flex items-center text-muted-foreground font-extralight gap-2">
                   {result.country}
-                  <ReactCountryFlag countryCode={result.country_code} />
+                  <ReactCountryFlag countryCode={result.country_code || ""} />
                 </span>
               </div>
             );
